@@ -1,13 +1,13 @@
-package spring_lesson4_Hibernate_relations;
+package spring_lesson4_Hibernate_one_to_one;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import spring_lesson4_Hibernate_relations.entity.Detail;
-import spring_lesson4_Hibernate_relations.entity.Employee;
+import spring_lesson4_Hibernate_one_to_one.entity.Detail;
+import spring_lesson4_Hibernate_one_to_one.entity.Employee;
 
-//Bi-directional association
-public class Test2 {
+////Uni-directional association
+public class Test1 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -16,13 +16,11 @@ public class Test2 {
                 .buildSessionFactory();
         Session session = null;
         try {
-
-//            session = factory.getCurrentSession();
-//            Employee employee = new Employee("Viktor", "Chkar", "Sales", 250);
-//            Detail detail = new Detail("Kiev", "1242131312", "viktorchkar@gmail.com");
+//            Session session = factory.getCurrentSession();
+//            Employee employee = new Employee("Vlad", "Danilov", "IT", 800);
+//            Detail detail = new Detail("Riga", "+37125451223", "vladislavs.danilovs@inbox.lv");
 //
-//            employee.setEmpDetails(detail);
-//            detail.setEmployee(employee);
+//            employee.setEmp_details(detail);
 //            session.beginTransaction(); //opening transaction
 //
 //            session.save(employee);
@@ -31,28 +29,28 @@ public class Test2 {
 //            session.getTransaction().commit();  //closing transaction or using rollback() if we want to undo insert
 //            System.out.println("Successfully added to database!");
 
-
-//            session = factory.getCurrentSession();
+//            Session session = factory.getCurrentSession();
+//            Employee employee = new Employee("Zaur", "Tregulov", "IT", 1200);
+//            Detail detail = new Detail("Baku", "1242131312", "zaurtregulov@gmail.com");
 //
+//            employee.setEmp_details(detail);
 //            session.beginTransaction(); //opening transaction
-//            Detail detail = session.get(Detail.class, 2);
-//            System.out.println(detail.getEmployee());
+//
+//            session.save(employee);
+//
 //
 //            session.getTransaction().commit();  //closing transaction or using rollback() if we want to undo insert
 //            System.out.println("Successfully added to database!");
 
             session = factory.getCurrentSession();
-
             session.beginTransaction(); //opening transaction
-            Detail detail = session.get(Detail.class, 2);
-            detail.getEmployee().setEmpDetails(null);
-            session.delete(detail);
-            System.out.println(detail.getEmployee());
+
+            Employee myEmp = session.get(Employee.class, 2);
 
             session.getTransaction().commit();  //closing transaction or using rollback() if we want to undo insert
             System.out.println("Successfully added to database!");
-
-
+            System.out.println(myEmp);
+            System.out.println(myEmp.getEmpDetails());
         } finally {
             session.close();
             factory.close();

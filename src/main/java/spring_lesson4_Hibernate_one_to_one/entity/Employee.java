@@ -1,4 +1,4 @@
-package spring_lesson4_Hibernate_relations.entity;
+package spring_lesson4_Hibernate_one_to_one.entity;
 
 import javax.persistence.*;
 
