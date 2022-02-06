@@ -25,7 +25,7 @@ public class Employee {
     }
 
     //which relations will be between class Employee and Department?
-    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE})
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "department_id") //foreign key
     private Department department;
 
