@@ -1,11 +1,21 @@
 package com.vladdanilov.spring.mvc;
 
+import com.vladdanilov.spring.mvc.validation.CheckEmail;
+
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+    @Size(min = 2, max = 16, message = "name must contain at least 2 symbols, but no longer then 16 symbols")
     private String name;
+
+//    @NotNull(message = "surname is required field") //will not work because surname length is 0 if empty
+//    @NotEmpty(message = "surname is required field") // will not work if user will write space
+    @NotBlank(message = "surname is required field")
     private String surname;
+    @Min(value = 500, message = "must be greater than 499")
+    @Max(value = 1000, message = "must be less than 1001")
     private int salary;
     private String department;
     private Map<String, String> departments;
@@ -13,6 +23,11 @@ public class Employee {
     private String carBrand;
     private String[] languages;
     private Map<String, String> languageList;
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "please use pattern XXX-XX-XX")
+    private String phoneNumber;
+
+    @CheckEmail(value = "abc.com", message = "email must ends with abc.com")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -101,6 +116,22 @@ public class Employee {
 
     public void setLanguageList(Map<String, String> languageList) {
         this.languageList = languageList;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
