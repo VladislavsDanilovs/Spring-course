@@ -1,6 +1,6 @@
-package com.vladdanilov.spring.springboot.spring_data_jpa.dao;
+package com.vladdanilov.spring.springboot.spring_data_rest.dao;
 
-import com.vladdanilov.spring.springboot.spring_data_jpa.entity.Employee;
+import com.vladdanilov.spring.springboot.spring_data_rest.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

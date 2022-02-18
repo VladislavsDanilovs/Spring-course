@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.vladdanilov.spring.springboot</groupId>
-	<artifactId>spring_data_jpa</artifactId>
+	<artifactId>spring_data_rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring_data_jpa</name>
-	<description>Demo project for Spring Data JPA</description>
+	<name>spring_data_rest</name>
+	<description>Demo project for Spring Boot Data Rest</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -21,9 +21,25 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
 		<dependency>
@@ -43,6 +59,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
 			</plugin>
 		</plugins>
 	</build>

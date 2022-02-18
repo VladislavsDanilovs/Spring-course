@@ -1,13 +1,13 @@
-package com.vladdanilov.spring.springboot.spring_data_jpa;
+package com.vladdanilov.spring.springboot.spring_data_rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringDataJpaApplication {
+public class SpringDataRestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDataJpaApplication.class, args);
+		SpringApplication.run(SpringDataRestApplication.class, args);
 	}
 
 }

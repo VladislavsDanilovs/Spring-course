@@ -1,4 +1,4 @@
-package com.vladdanilov.spring.springboot.spring_data_jpa.entity;
+package com.vladdanilov.spring.springboot.spring_data_rest.entity;
 
 import javax.persistence.*;
 
